@@ -1,0 +1,8 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 3433,
+  "username": "postgres",
+  "password": "docker",
+  "database": "saude_id_test"
+}
