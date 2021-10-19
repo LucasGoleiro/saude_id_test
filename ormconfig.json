@@ -4,5 +4,11 @@
   "port": 3433,
   "username": "postgres",
   "password": "docker",
-  "database": "saude_id_test"
+  "database": "saude_id_test",
+  "migratons": [
+    "./src/shared/infra/typeorm/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
+  }
 }

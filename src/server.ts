@@ -1,6 +1,6 @@
 import express from 'express';
 import routes from './routes/index';
-import "./database/index";
+import "./shared/infra/typeorm";
 
 const app = express()
 
