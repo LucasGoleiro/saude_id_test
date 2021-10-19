@@ -23,3 +23,5 @@ authorsRouter.post('/', async (request, response) => {
 
   return response.json(createAuthor)
 })
+
+export default authorsRouter
