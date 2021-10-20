@@ -1,0 +1,120 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "NodeJS API: blog",
+    "description": "NodeJS API with entities: Post, Authors and Categories",
+    "vesion": "1.0.0"
+  },
+  "server": {
+    "url": "http://localhost:3333"
+  },
+  "paths": {
+    "/authors": {
+      "post": {
+        "sumary": "Registration of Author",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/Author"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "sumary": "Get all Authors"
+      }
+    },
+    "/categories": {
+      "post": {
+        "sumary": "Registration of Categories",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/Category"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "sumary": "Get all Categories"
+      }
+    },
+    "/posts": {
+      "post": {
+        "sumary": "Registration of Posts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/Post"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "sumary": "Get all Posts"
+      },
+      "put": {
+        "sumary": "Update Post by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/Category"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Author": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Post": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
