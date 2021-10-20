@@ -21,7 +21,9 @@ categoriesRouter.post('/', async (request, response) => {
 
   const createCategory = container.resolve(CreateCategoryService)
 
-  return response.json(createCategory)
+  const category = await createCategory.execute({ name })
+
+  return response.json(category)
 })
 
 export default categoriesRouter

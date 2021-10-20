@@ -21,7 +21,9 @@ authorsRouter.post('/', async (request, response) => {
 
   const createAuthor = container.resolve(CreateAuthorService)
 
-  return response.json(createAuthor)
+  const author = await createAuthor.execute({ name })
+
+  return response.json(author)
 })
 
 export default authorsRouter
